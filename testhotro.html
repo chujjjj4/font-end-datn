@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Support Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+        }
+        #chat-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat-box {
+            height: 80%;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .message {
+            margin: 5px 0;
+        }
+        .user-message {
+            text-align: right;
+            background-color: #e1ffc7;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .admin-message {
+            text-align: left;
+            background-color: #d4e5ff;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-container" class="p-3">
+    <h3>Hỗ Trợ Khách Hàng</h3>
+    <div id="chat-box">
+        <!-- Chat messages will be displayed here -->
+    </div>
+    
+    <input type="text" id="user-message" class="form-control" placeholder="Nhập câu hỏi của bạn...">
+    <button id="send-message-btn" class="btn btn-primary mt-2">Gửi</button>
+</div>
+
+<script>
+    const chatBox = document.getElementById('chat-box');
+    const userMessageInput = document.getElementById('user-message');
+    const sendMessageBtn = document.getElementById('send-message-btn');
+
+    // Dummy messages for demonstration
+    const messages = [
+        { user: "Tôi cần giúp đỡ với đơn hàng của tôi!", type: 'user' },
+        { user: "Bạn đợi bên mình chút nha", type: 'admin' },
+        { user: "Sản phẩm có thể đổi trả không?", type: 'user' },
+        { user: "Vâng, sản phẩm có thể đổi trả trong vòng 30 ngày.", type: 'admin' },
+    ];
+
+    function loadMessages() {
+        chatBox.innerHTML = ''; // Clear chat box
+        messages.forEach(msg => {
+            sendMessage(msg.user, msg.type === 'admin');
+        });
+    }
+
+    function sendMessage(message, isAdmin = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', isAdmin ? 'admin-message' : 'user-message');
+        messageDiv.textContent = message;
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+    }
+
+    sendMessageBtn.addEventListener('click', () => {
+        const userMessage = userMessageInput.value.trim();
+        if (userMessage) {
+            sendMessage(userMessage); // User message
+            userMessageInput.value = '';
+
+            // Simulate an admin response after a short delay
+            setTimeout(() => {
+                sendMessage("Bạn đợi bên mình chút nha", true); // Admin response
+            }, 1000);
+        }
+    });
+
+    // Initial load of messages
+    loadMessages();
+</script>
+</body>
+</html>

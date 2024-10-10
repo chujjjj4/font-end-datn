@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Response Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+        }
+        #user-list {
+            width: 40%;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+        }
+        #chat-container {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat-box {
+            height: 80%;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .message {
+            margin: 5px 0;
+        }
+        .user-message {
+            text-align: right;
+            background-color: #e1ffc7;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .admin-message {
+            text-align: left;
+            background-color: #d4e5ff;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .user-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .user-item:hover {
+            background-color: #f0f0f0;
+        }
+        .user-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="user-list" class="border-right">
+    <h3>Người Dùng</h3>
+    <div id="users">
+        <!-- Users will be populated here -->
+        <div class="user-item" data-user-id="1">
+            <img src="https://via.placeholder.com/40" alt="User 1" class="user-photo">
+            <span>Người dùng 1 (2 tin nhắn mới)</span>
+        </div>
+        <div class="user-item" data-user-id="2">
+            <img src="https://via.placeholder.com/40" alt="User 2" class="user-photo">
+            <span>Người dùng 2 (1 tin nhắn mới)</span>
+        </div>
+        <div class="user-item" data-user-id="3">
+            <img src="https://via.placeholder.com/40" alt="User 3" class="user-photo">
+            <span>Người dùng 3 (0 tin nhắn mới)</span>
+        </div>
+        <!-- Add more users as needed -->
+    </div>
+</div>
+
+<div id="chat-container" class="p-3">
+    <h3>Trả Lời Hỗ Trợ</h3>
+    <div id="chat-box">
+        <!-- Chat messages will be displayed here -->
+    </div>
+    
+    <input type="text" id="admin-response" class="form-control" placeholder="Nhập câu trả lời cho người dùng...">
+    <button id="send-response-btn" class="btn btn-success mt-2">Gửi Trả Lời</button>
+</div>
+
+<script>
+    const chatBox = document.getElementById('chat-box');
+    const adminResponseInput = document.getElementById('admin-response');
+    const sendResponseBtn = document.getElementById('send-response-btn');
+    const userItems = document.querySelectorAll('.user-item');
+
+    let selectedUserId = null; // Store the selected user ID
+
+    // Dummy messages for demonstration
+    const messages = {
+        1: [
+            { content: "Tôi cần giúp đỡ!", type: 'user' },
+            { content: "Bạn đợi bên mình chút nha", type: 'admin' }
+        ],
+        2: [
+            { content: "Giá sản phẩm là bao nhiêu?", type: 'user' }
+        ],
+        3: [
+            { content: "Mình gặp sự cố với đơn hàng.", type: 'user' }
+        ]
+        // Add more users and their messages
+    };
+
+    userItems.forEach(item => {
+        item.addEventListener('click', function() {
+            selectedUserId = this.dataset.userId; // Get selected user ID
+            loadMessages(selectedUserId); // Load messages for the selected user
+        });
+    });
+
+    function loadMessages(userId) {
+        chatBox.innerHTML = ''; // Clear chat box
+        if (messages[userId]) {
+            messages[userId].forEach(msg => {
+                sendMessage(msg.content, msg.type === 'admin');
+            });
+        }
+    }
+
+    function sendMessage(message, isAdmin = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', isAdmin ? 'admin-message' : 'user-message');
+        messageDiv.textContent = message;
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    sendResponseBtn.addEventListener('click', () => {
+        const adminResponse = adminResponseInput.value.trim();
+        if (adminResponse && selectedUserId) {
+            sendMessage(adminResponse, true); // Admin response
+            adminResponseInput.value = '';
+            // Here you can also send the response to your backend to save it in the database
+        }
+    });
+</script>
+</body>
+</html>
+
