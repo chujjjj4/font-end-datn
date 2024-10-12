@@ -11241,3 +11241,24 @@ body {
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
 }
+/* Kiểu dáng cho nút lọc */
+.btn-filter {
+  background-color: #28a745; /* Màu nền xanh */
+  color: #fff; /* Màu chữ trắng */
+  font-weight: bold; /* Chữ đậm */
+  border: none; /* Không có viền */
+  border-radius: 5px; /* Bo tròn các góc */
+  padding: 10px 15px; /* Khoảng cách trong nút */
+  transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng khi hover */
+.btn-filter:hover {
+  background-color: #218838; /* Màu nền tối hơn khi di chuột */
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+/* Hiệu ứng khi nhấn */
+.btn-filter:active {
+  transform: scale(0.95); /* Nhấn nhẹ khi nhấn */
+}
