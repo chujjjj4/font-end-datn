@@ -318,118 +318,36 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Quần âu</h1>
+            <h1 class="mt-4">Chi tiết sản phẩm</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active"></li>
             </ol>
 
+            <!--Table content-->
             <div class="card mb-4">
-              <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Quần âu
-                <!-- Button thêm áo vest (Create) -->
-                <a href="">
-                  <button class="btn btn-primary float-end">
-                    <i class="fas fa-plus"></i> Thêm quần âu
-                  </button>
-                </a>
-              </div>
-              <div class="card-body">
-                <table id="datatablesSimple">
-                  <thead>
-                    <tr>
-                      <th>STT</th>
-                      <th>Tên</th>
-                      <th>Ngày tạo</th>
-                      <th>Người tạo</th>
-                      <th>Ngày cập nhật</th>
-                      <th>Người cập nhật</th>
-                      <th>Trạng thái</th>
-                      <th>Hành động</th>
-                      <!-- Thêm cột Hành động -->
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>STT</th>
-                      <th>Tên</th>
-                      <th>Ngày tạo</th>
-                      <th>Người tạo</th>
-                      <th>Ngày cập nhật</th>
-                      <th>Người cập nhật</th>
-                      <th>Trạng thái</th>
-                      <th>Hành động</th>
-                      <!-- Thêm cột Hành động -->
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Quần đen</td>
-                      <td>2024-10-01</td>
-                      <td>Admin</td>
-                      <td>2024-10-10</td>
-                      <td>Admin</td>
-                      <td>Đang hoạt động</td>
-                      <!-- Thêm các icon CRUD cho từng dòng -->
-                      <td>
-                        <a href="ViewSanPhamChiTiet.html">
-                          <button class="btn btn-info btn-sm">
-                            <i class="fas fa-eye"></i>
-                            <!-- Icon Xem -->
-                          </button>
-                        </a>
-
-                        <a href="">
-                          <button class="btn btn-warning btn-sm">
-                            <i class="fas fa-edit"></i>
-                            <!-- Icon Sửa -->
-                          </button>
-                        </a>
-
-                        <a href="">
-                          <button class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash"></i>
-                            <!-- Icon Xóa -->
-                          </button>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Quần âu xanh</td>
-                      <td>2024-09-21</td>
-                      <td>Quản lý</td>
-                      <td>2024-10-08</td>
-                      <td>Admin</td>
-                      <td>Ngừng hoạt động</td>
-                      <td>
-                        <a href="ViewSanPhamChiTiet.html">
-                          <button class="btn btn-info btn-sm">
-                            <i class="fas fa-eye"></i>
-                            <!-- Icon Xem -->
-                          </button>
-                        </a>
-
-                        <a href="">
-                          <button class="btn btn-warning btn-sm">
-                            <i class="fas fa-edit"></i>
-                            <!-- Icon Sửa -->
-                          </button>
-                        </a>
-
-                        <a href="">
-                          <button class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash"></i>
-                            <!-- Icon Xóa -->
-                          </button>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                <div class="card-header">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Chi tiết sản phẩm
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <!-- Hình ảnh sản phẩm -->
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIALUAwgMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAAAQIEBgcIAwX/xABGEAABAwIDAwkGAgYHCQAAAAABAAIDBBEFBiEHEjETIjJBUWFxkaEUQlKBscEV0SMzcoKy8DQ1Q5KiwuEkJSY2RFNic5P/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAZEQEBAAMBAAAAAAAAAAAAAAAAAREhMQL/2gAMAwEAAhEDEQA/AN1IiICIiAiIgIiICIiAiIgIiWQEREBERAREQEREBERAREQEREBERAREQEREBE8tPosRzFtDwDBeUibU+2VbARyVPzgHdjn9EfVBe5wzbh+VKBtRW70s8n6qmjID5NdT3AdZ/wBAsCftnnc79BgcQaeBkqST6NWuMw4vWY5X1FfiMnKTy9nBjR7rewAfPrOpKtYoGCESiQ26xp1oNmt2yV+9/U1J/wDd35L62B7XqWqq44cXw72SN5A9ojm32N73aCw7xf7rUPIMY4jlHFwF/kvJwbxY647wg6tikbMA5hGvZr3qvdWicl7RZ8DgZQYmySopI7CGRlt+MfDY2uPXx6tu5fzVhGPRb2H1sUrgOczg9vi06oPsWRelgeiqHNQQiIgIiICIiAiIgIiICIiAiIgpe9scbnvcA1ou5x0AHHisCzJtTwjDQ6HCmnEajhvMO7ED+11/u+ap2z4ycPy3Fh8TyJa+SzwDYmJtt7zJaPAlaMLuegyTMOdsex0OZWVzo6cn+jwcxlu/rPzKxq4HDRRdUkhAlN2WPZZX1OzlNx7zZh1awDRfPfzhujr49y+1SAezRiwtuj7IKWWNQW2Bc4E3+YVnU2E7wNALD7q7leGVrRbhGfsrCYkvcTxJP5IKHHo+NlVHNJFK2WKRzJGm7XtdYg9xXkXb1gOIRBsLLG1TGMKc2LFCcRph1vNpQO49fz81t/LWaMLzLTGbDZ7vb+sifo+PxH8+K5gBWS7PMWdhWaqR3KERTu5CQ3473R8nW9UHSTmqEgk5WFr+5CgIiICIiAiIgIiICIiAiKxxvEWYRg9ZiMgu2mgdJYniQNB89B80GitrGMfiuaqprH3gobU0djoS088+O9cfuhYST0Vc1D3z8pJM8ukkJc9xHSceJVr7vl9UFaoJVSp99BI5rbnivr0Tt6GO3wa+IXyOm63Ur/C36Pbfg78vzQROf9uYOo317tFal1+K96jm1evVG+3jp+atSUA6ajRQCoceiiCbqY3ObZ8ZLXXu119Qe1UKp3RQdO5LxYYrg1LUmw5aIPsDwNtR8jdfdctSbFsV3qGfD3OuaeW7Rf3H6+jg7zC22UEIiICIiAiIgIiICIiAtfbasU9kyzDh7XWdWzAED4Gc4+u6tgrRG2jE/a81tpGuuyihDLA++7nO9C0fJBgR6K8HfcfVe56CtpdHtI4XQVgqH8VBS6Cpqu8LfuzytPWAR39v2VkwoyoNPK2S17Gx8EF/iTdySJ/bvD6H7KzuvetqRUiJreLTvehVq47rLniggHieoaKbqA3qRBLTzlMhVDPqVMhQZZs3xL8OzPTtLrR1IMLrnt1HqB5ro6nk5WFr+5clwSyQyRzRHdkY4OY7sI4Lp/KuIx4lhFPURm7ZY2vb4EXUH2EQoqCIiAiIgIiICIiCHubG1z3uDWtBLieAA4rlfHsQdi2M1le7U1E7pQOwEmw8l0HtHxI4VkzEpWutJNHyEZbxu/m/S5+S5tJ5yCpyt5/d8V7uKt36ytB4WKCsqkKtUlBB04KiTVjr9irVDvpxQTTaxte3WwIXo/nu8NV50gEVO4k6XJVTTZt3aF2p7kEvdbgqfdUceKrAQOG7ZQ9HqHHmoKweYt47FMTNRg3sbnHfppDHY/CecPqfJaNaeYs82O4l7JmOSmc6zaiK4B+Jp/JzvJB0E4KFUTvNDh1qlAREQEREBERAREQao264lu02GYW0jnudUSd1hut+rvJadCzHatiX4jnSuLXb0dLu0zP3Rr/iL1hzUCQrwa7flPcB9V6SO5zl4U3Fzu02+QQXCpKlQggqHBVKklBFua2PqtvO8OxQ476pJte2t/oq2Mvx0QVNClCoKClxUA3i1RxVEJuwtPUg9o+gvoZerxhuOUNY42bFM0uN7cw6O/wkr50fQQ8LdSDrqgl5eiifcXtxC9Vi2zTFPxXKlDM5+8/kw2Q9rm813qCspQEREBERAREQFb4hVx4fQVFbPpFTxOld3hov9lcLC9rmImgyZURNdaStkZTt193pO9GkfNBoCuqJaqeWon50sz3SSOHW52p9V4tSQqPcQeMl3PdYcRr3WUUw3Ym3V/TUv+66yteDbWKO/XbpH6DzVm0aW6lBUoRRdUSoKXUFAaB2DtVSpCqCAVSpcVRcd6Clyrw+nfPLM1g3iIy+w67C59AvJxPYsg2dxMkzhRRSt3mPduvb2g6fdQfFYocr3GMPlwjGK7D5Ad+mmfEN4cQDofmLH5qyeqNx7C8UPs1Xh73asm32i/U4fm13mtulc4bKa80WaWx71m1ERYPEHeH0K6OicHxh3aAglERAREQEREBac264jv4lhuGtcLQxunkHe42Ho0+a3GAub9pdf+I50xWQOuyOXkGW7GAN+u8gxRyiV1mWaDvcBbtUnpL7OTsO/EMZbLI39DSDfPe/3R9T8u9QfVxnDzh2VWwEawxt5Qj4nOAPq5YetrZ7oxTZFfUSaPqamKNt+wEu/wAq1SkUUFSoKqIQKEQVEAaNNx2hSqGFVoKSqSqlCCghZDs7/wCccPd2St/iaPusfcvuZGdyeZ6Vw03SHeTmn7KVYyrbdhQos4MrI2AMr6drye17OafQMWu3rf8Atvwn2/KTMQY28mHytfpx3Hc1w9Wn5LQD1UX2A1QosaoakmwjnYXdwvY+hK6lwacTUTeu2i5M67ronZbi78Ry9SyVEhklcwh7jbVzSWk2HgoM3RCioIiICIiDxrqllDQVFXKeZBE6U+DRf7LlKqmkqZ5aiU/pZXue49pdqfVdZSwxVEL4aiNksUjS18b2hzXA8QQeIWsMy7HKSokfPgFcaO9z7NO0vj8Gu6TR/eQaSlNm3HX1raeQsEfTYdTxvZaepdykgtwvwHyFlZ4XsoxdmLwuxSSjNFG7ecIpHOL7DQWLRpe11tbAsENNKZpdS3orKsI25htNlvBaNnD2p0lv2YyP8y0ytsbf6gur8FprjmQzPc39osA/hK1OtRBUlSoQQoKlUyDmmxOunn/JQUUzt9rvG69l5wRFrbtY7d6+avRQFCKFRDl9rJv9fN/9Tj5WK+Kvr5PP/ElIz499vjzHH6hS8WOn6ykhxjApaOfWKqpjG8dzmrlGupZqKrmpKpu7NA90cg/8gbH1XVWXZTJgtKXcQy3lotU7S9n2KV+Z5cSwalZJDVNDpgZWs3ZBoeJHEWOnWCqjUi2/sQne+kqYN4nkZ7tb8IcAfqHLEo9nONCRrakwx34hhLz5WA9VtjZ3k+PL1O9wBL5iHPe43LrDS/VbuUGboiKgiIgIiIJBVYcvNEElovewuoKIgw7P2RaTN7GVDZnU2JQsLI5ekxzdTuub2XPEa+K0hmHKOO5cefxSge2Ef9REN+E9+8OH71vBdQJ90HIN94c3geBChdRYhkzLOJvc+twOifI7R0rIwx58XNsVjeIbIstSf0OKqpr/AAVDnfx3QaCY10h3WNLnE2AA1Kz7AMEdSUzIiy88hvIRrY9i2VgezLBcIcJI2Pmm/wC9M7eePDQAfILIKTL1BSSbzIws+trLh8bLWXYRSObVRB7HtsWu6wtGZ1y3UZXzBPh8jXGncTJSyn+0iPDXtHA9/iF1C0ACwAHgvm5hy9hWZKIUmMU4mja7eY4Etcx3C7XDUHtVhXKdlTfU/wA3K6Gh2QZTZ04q2bX+0qnD+Gy+pTbOsr0wHJYTT2b1yN5R3959yqjmiCCWoduwRySu+GNu99FmWScpYpJjFNWyRCFkLt7ddq52hFrDhx/0W948sYTC3djpmAdgCv6eipqT9TExqlivLBqV9JhkUUp5w4jsuVdljXdKx8UJRVHmKSC9+TF+1ept2KEQEREBERAREQEREBERAREQFNyiIChEQEREFVz2pdEQQoREBERAREQEREBERB//2Q==" alt="Áo khoác nam" class="img-fluid" />
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <!-- Thông tin sản phẩm -->
+                            <h5>Tên sản phẩm: <span id="product-name">Áo Vest Thời Trang</span></h5>
+                            <p>Size: <span id="product-size">M</span></p>
+                            <p>Màu sắc: <span id="product-color">Đen</span></p>
+                            <p>Chất liệu: <span id="product-material">Cotton</span></p>
+                            <p>Giá bán: <span id="product-price">1.200.000 VNĐ</span></p>
+                            <button class="btn btn-primary mt-3">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
           </div>
         </main>
         <footer class="py-4 bg-light mt-auto">
